@@ -1,0 +1,10 @@
+{
+  "name": "FocusMate",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Your all-in-one productivity tool.",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": ["storage"]
+}

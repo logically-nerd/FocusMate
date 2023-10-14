@@ -1,0 +1,12 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(144, 249, 249);
+}
+main{
+    min-height: 30%;
+    width: 100%;
+}
+.hide{
+    display: none;
+}
