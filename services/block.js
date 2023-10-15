@@ -74,3 +74,24 @@ function reassignSiteId() {
     siteList.innerHTML = ''
     setTimeout(getSites, 5)
 }
+
+// check the URL
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    const currURL = message.link
+    chrome.storage.local.get('site', (data) => {
+        const siteArray = data.site
+        if (siteArray) {
+            for (let i = 0; i < siteArray.length; i++) {
+                console.log(siteArray[i], currURL)
+                console.log(currURL.includes(siteArray[i]))
+                if (currURL.includes(siteArray[i])) {
+                    sendResponse({ message: 0 })
+                    break
+                }
+            }
+        } else {
+            sendResponse({ message: 1 })
+        }
+    })
+    return true
+})
