@@ -9,37 +9,44 @@
     <title>FocusMate</title>
 </head>
 <body>
-    
-    <h1>Focus Mate!</h1>
     <header>
-        <p class="quotes"></p>
-        <div class="quotesAuthor">-</div>
-    </header>
-    <main>
-        <div class="greet">
-            HI! <span id="name"></span>
-            <input type="text" id="getName" placeholder="What should I call you??">
-            <div>
-                <div class="time"></div>
-                <div class="date"></div>
-            </div>
+        <div class="datetime">
+            <div class="time"></div>
+            <div class="date"></div>
         </div>
+        <div class="quote">
+            <p class="quotes"></p>
+            <p class="quotesAuthor">-</p>
+        </div>
+    </header>
+    <div class="greet">
+        <h2>Hi! <span id="name"></span></h2>
+        <input type="text" id="getName" placeholder="What should I call you?">
+    </div>
+
+    <main>
         <div class="todo">
-            <input type="text" class="enterTask" placeholder="What's on your plate?">
+            <h2>ToDo Tasks</h2>
+            <input type="text" class="enterTask" placeholder="Add a task">
             <ul class="taskList">
             </ul>
         </div>
-        <div class="blocked">
+
+        <div class="block">
+            <h2>Block Sites</h2>
+            <input type="text" class="enterSite" placeholder="Enter URL">
             <ul class="blockList">
-                Blocked Sites
+                <!-- Blocked Sites Go Here -->
             </ul>
-            <input type="text" class="enterSite" placeholder="Block Distractive URL">
         </div>
     </main>
+
+    <script src="./services/jquery.js"></script>
     <script src="./services/quote.js"></script>
     <script src="./services/greet.js"></script>
     <script src="./services/todo.js"></script>
     <script src="./services/block.js"></script>
 </body>
+
 
 </html>
