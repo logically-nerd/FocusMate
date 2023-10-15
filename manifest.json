@@ -3,17 +3,14 @@
   "version": "1.0",
   "manifest_version": 3,
   "description": "Your all-in-one productivity tool.",
+  "action": {
+    "default_popup": "popup.html"
+  },
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
-  "permissions": ["storage"],
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["./services/contentScript.js"]
-    }
-  ],
   "background": {
     "service_worker": "services/background.js"
-  }
+  },
+  "permissions": ["storage"]
 }

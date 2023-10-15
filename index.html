@@ -8,34 +8,42 @@
     <script src="./services/jquery.js"></script>
     <title>FocusMate</title>
 </head>
+
 <body>
-    
-    <h1>Focus Mate!</h1>
-    <header>
-        <p class="quotes"></p>
-        <div class="quotesAuthor">-</div>
-    </header>
-    <main>
-        <div class="greet">
-            HI! <span id="name"></span>
-            <input type="text" id="getName" placeholder="What should I call you??">
-            <div>
-                <div class="time"></div>
-                <div class="date"></div>
+    <div class="container">
+        <header>
+            <h1>Focus Mate</h1>
+            <div class="quote">
+                <p class="quotes"></p>
+                <p class="quotesAuthor">-</p>
             </div>
-        </div>
-        <div class="todo">
-            <input type="text" class="enterTask" placeholder="What's on your plate?">
-            <ul class="taskList">
-            </ul>
-        </div>
-        <div class="blocked">
-            <ul class="blockList">
-                Blocked Sites
-            </ul>
-            <input type="text" class="enterSite" placeholder="Block Distractive URL">
-        </div>
-    </main>
+        </header>
+        <main>
+            <div class="section">
+                <h2>Hi! <span id="name"></span></h2>
+                <div class="input-container">
+                    <input type="text" id="getName" placeholder="What should I call you?">
+                </div>
+                <div class="datetime">
+                    <div class="time"></div>
+                    <div class="date"></div>
+                </div>
+            </div>
+            <div class="section">
+                <h2>What's on your plate?</h2>
+                <input type="text" class="enterTask" placeholder="Add a task">
+                <ul class="taskList">
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Blocked Sites</h2>
+                <ul class="blockList">
+                    <!-- Blocked Sites Go Here -->
+                </ul>
+                <input type="text" class="enterSite" placeholder="Block Distractive URL">
+            </div>
+        </main>
+    </div>
     <script src="./services/quote.js"></script>
     <script src="./services/greet.js"></script>
     <script src="./services/todo.js"></script>
