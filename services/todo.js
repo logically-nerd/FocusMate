@@ -5,7 +5,7 @@ let checkboxes;
 $(document).ready(() => {
     //fetch all the tasks from local storage
     getTasks()
-    $('body').on('click', 'input[type="checkbox"]', (task) => {
+    $('body').on('click', 'input[type="checkbox"].task', (task) => {
         const taskId = task.target.parentNode.parentNode.id
         deleteTask(taskId)
     })
@@ -26,7 +26,7 @@ function addTask(task) {
     // Append the new task to the task array
     taskPromise.then((data) => {
         const taskArray = data.task || [];
-        taskList.innerHTML += `<li id=${taskArray.length}><label class="checkbox"><input type="checkbox">${task}</label></li>`
+        taskList.innerHTML += `<li id=${taskArray.length}><label class="checkbox"><input type="checkbox" class='task'>${task}</label></li>`
         taskArray.push(task);
 
         // Set the task array back to storage
@@ -47,7 +47,7 @@ function getTasks() {
         // Callback function to iterate over the task array
         const iterateTaskArray = () => {
             for (let i = 0; i < taskArray.length; i++) {
-                taskList.innerHTML += `<li id=${i}><label class="checkbox"><input type="checkbox">${taskArray[i]}</label></li>`;
+                taskList.innerHTML += `<li id=${i}><label class="checkbox"><input class='task' type="checkbox">${taskArray[i]}</label></li>`;
             }
         };
 
@@ -65,13 +65,13 @@ function deleteTask(taskId) {
     taskPromise.then((data) => {
         const taskArray = data.task;
         taskArray.splice(taskId, 1);
-        reassignId()
+        reassignListId()
         // Set the task array back to storage
         chrome.storage.local.set({ task: taskArray });
     });
 }
 
-function reassignId() {
+function reassignListId() {
     taskList.innerHTML = ''
     setTimeout(getTasks, 5)
 }
