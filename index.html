@@ -17,19 +17,29 @@
     </header>
     <main>
         <div class="greet">
-            HI!
+            HI! <span id="name"></span>
             <input type="text" id="getName" placeholder="What should I call you??">
+            <div>
+                <div class="time"></div>
+                <div class="date"></div>
+            </div>
         </div>
         <div class="todo">
             <input type="text" class="enterTask" placeholder="What's on your plate?">
             <ul class="taskList">
             </ul>
         </div>
+        <div class="blocked">
+            <ul class="blockList">
+                Blocked Sites
+            </ul>
+            <input type="text" class="enterSite" placeholder="Block Distractive URL">
+        </div>
     </main>
-    <script src="./services/background.js"></script>
     <script src="./services/quote.js"></script>
-    <script src="./services/name.js"></script>
+    <script src="./services/greet.js"></script>
     <script src="./services/todo.js"></script>
+    <script src="./services/block.js"></script>
 </body>
 
 </html>

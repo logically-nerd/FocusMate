@@ -4,6 +4,7 @@ body {
     background-image: url("assets/background.png");
     background-repeat: no-repeat;
     background-size: cover;
+    color: #b0b9be;
 }
 main{
     min-height: 30%;
@@ -11,4 +12,7 @@ main{
 }
 .hide{
     display: none;
+}
+.greet{
+    font-family: brown-sugar;
 }
