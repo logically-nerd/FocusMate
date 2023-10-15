@@ -4,7 +4,6 @@ chrome.runtime.sendMessage({ link: window.location.href }, (response) => {
         //blocked
         alert('Blocked!')
         alert('Focus!')
-        window.close()
-        window.open()
+        window.location.replace('https://www.google.com/')
     }
 })
